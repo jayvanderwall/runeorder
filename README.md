@@ -1,6 +1,6 @@
 # runeorder
 Code to generate graphs showing the order of the Elder Futhark vs. other alphabets
 
-The code creates graphs that display the order of one alphabet on each axis, with each point labeled with the appropriate letter or rune.
-The line of best fit is overlayed in orange. The correlation coefficient is provided as rho, and the p-value is also provided as produced by scipy. 
-The Spearman correlation coefficient was chosen over the Pearson correlation coefficient as this is not a continuous distribution.
+Each graph has a few pieces of information. The X (horizontal) position of each point represents the position of that point in the alphabet labeled at the bottom, and its Y (vertical) position represents its position in the alphabet labeled on the left. Only letters that appear in both alphabets are charted (thus the ᚠ rune is missing as it is not in Proto-Elder Futhark).
+The orange line is drawn such that it is as close to all points as possible (a least-square linear regression to use the technical term). At the top, there are two numbers, rho and p.
+Rho runs from -1 to 1 and represents how strong the correlation is. A very strong correlation might be 0.9, but also a -0.9 would be a very strong negative correlation (in our case that would be if the inventor(s) of the runes just reversed the Lepontic alphabet). Finally, if rho is close to zero, that represents a very low correlation, as indeed we see. The p-value is less important in this case, but corresponds roughly to how certain you should be that there is no correlation, where higher means more certain. More information can be found by looking up Spearman Correlation Coefficient if interested.
